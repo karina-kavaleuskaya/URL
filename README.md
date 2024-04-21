@@ -34,4 +34,4 @@ Without docker:
       ```
      
 
-You can test this app with postman requests collection (it is in **_/test-project_** folder)
+You can test this app with postman requests collection (it is in **_/url_container_** folder)
