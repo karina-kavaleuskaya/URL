@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "83a59677-1805-4424-a009-3ef5ddf04723",
+		"name": "urls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33696234"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"akira08900@gmail.com\",\r\n    \"password\":\"zjq6513233\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/auth/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"akira08900@gmail.com\",\r\n    \"password\":\"zjq6513233\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/auth/jwt/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzAwMDI1LCJpYXQiOjE3MTMyOTk3MjUsImp0aSI6ImJlZDFiN2IxMTE0NjQxNTViNzE3MDQwMDRjZjQ4ZTJkIiwidXNlcl9pZCI6M30.374aVbDKaj3PrCYCOLxyNX24pnxh-O85SoVs5uwBnXQ\n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"akira08900@gmail.com\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/reset-password/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"reset-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzA0OTI0LCJpYXQiOjE3MTMzMDQ2MjQsImp0aSI6ImUyZTAwZGFjNGQ3MjQ5MjliZGY3MDllOWVlMTYxOGVjIiwidXNlcl9pZCI6M30.XKbv5C2-SW9-xwAXnUEDavRYn2oF2krMYnzcO6-UBqE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"video\",\r\n    \"description\":\"book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/update-collection/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"update-collection",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "collection",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzYxNjc5LCJpYXQiOjE3MTMzNjEzNzksImp0aSI6ImU4NzBmMTUwM2I1NTQ0NjNhZDlmNDg4MmFhMDU2NGNlIiwidXNlcl9pZCI6M30.yU_sKOsXYuVK9xFqIFTbk5A7ZdyiSDfzwSVOfuDynsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/collection/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"collection",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzYxMjU1LCJpYXQiOjE3MTMzNjA5NTUsImp0aSI6ImU5ZWQwNzc2MzNiYzRmZjBhNDQ1ZTg0YWI2ODBjNjJiIiwidXNlcl9pZCI6Mn0.pU1E9BzusqFZ46XJ_3KhJGXPGxmXvYN2Nmofok-z2gE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"book\",\r\n    \"description\":\"book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/create-collection/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"create-collection",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzYwOTE4LCJpYXQiOjE3MTMzNjA2MTgsImp0aSI6ImYxYmY3YzkxMTI1MTQxMGVhNDQxNmJhNjJmNWIyYzUyIiwidXNlcl9pZCI6Mn0.gVkBzJlcuZLhXrk0_lkrH6dzJt-T998vpICb63KM4CU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/delete-collection/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"delete-collection",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzc1ODA0LCJpYXQiOjE3MTMzNzU1MDQsImp0aSI6IjI2MzJhMGNjMDZlMTRiNmRiOWI5ZDFhNWY3MDlmZjI3IiwidXNlcl9pZCI6M30.9pXPhUG-7Ais6x3wENHqQhNJ8X6kPDi-TakR35ca45w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://refactoring.guru/ru/design-patterns/catalog\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/containers-create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"containers-create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzc1MTEzLCJpYXQiOjE3MTMzNzQ4MTMsImp0aSI6ImM1NzZiMTQwOGIwNjRiOTVhY2ZjZWNmZGQ4NmY1NmZiIiwidXNlcl9pZCI6M30.Y-G4CFHUBf69_nR_t_wski85pZuIc1X5ldNf4jMkRP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/containers/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"containers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzY0NDkxLCJpYXQiOjE3MTMzNjQxOTEsImp0aSI6IjBmZDIxMzMyYWYwNDRlN2U4ODM3NzExZGY0ZWVmMTY4IiwidXNlcl9pZCI6M30.ppX9YGCxuSRqq2T344uuGHEEk2meS5x_YHRf-wyhtjY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/delete-container/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"delete-container",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMzc1OTgxLCJpYXQiOjE3MTMzNzU2ODEsImp0aSI6IjQ4NDRjZDUzZTQzMTRhYTA5YzUyYzZiMDY0NmYwMGNlIiwidXNlcl9pZCI6M30.GbZtp6KPILB-gTNTstMcP1UmVb-ojRQTTsvQZBKhMH4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://htmlacademy.ru/profile/id2509659\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/catalog/update-container/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"catalog",
+						"update-container",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "url add to collection",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "change passsword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzNDQ4ODIyLCJpYXQiOjE3MTM0NDg1MjIsImp0aSI6IjA1NDcxZjc5MWM4NjQ0Yzk4NDhjNDNhYmY4MzZlMzQ4IiwidXNlcl9pZCI6M30.2yfneonWeScoK6oL_TWF4J1vg3UpZEWKmNqDKBP9G4w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_password\": \"zjq6460296\",\r\n    \"new_password\": \"zjq6513233\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/change-password/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"change-password",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
