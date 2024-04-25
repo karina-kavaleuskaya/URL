@@ -1,0 +1,18 @@
+SELECT
+    user_customuser.email AS user,
+    SUM(CASE WHEN catalog_container.url_type = 'website' THEN 1 ELSE 0 END) AS website_count,
+    SUM(CASE WHEN catalog_container.url_type = 'article' THEN 1 ELSE 0 END) AS article_count,
+    SUM(CASE WHEN catalog_container.url_type = 'video' THEN 1 ELSE 0 END) AS video_count,
+    SUM(CASE WHEN catalog_container.url_type = 'book' THEN 1 ELSE 0 END) AS book_count,
+    SUM(CASE WHEN catalog_container.url_type = 'music' THEN 1 ELSE 0 END) AS music_count,
+    COUNT(catalog_container.url) AS total_urls
+FROM
+    catalog_container
+JOIN
+    user_customuser  ON catalog_container.user_id = user_customuser.id
+GROUP BY
+    user_customuser.email
+ORDER BY
+    total_urls DESC,
+    MIN(user_customuser.created_at) ASC
+LIMIT 10;
